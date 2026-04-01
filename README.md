@@ -149,7 +149,7 @@ npm run preview
 
 ## Estrutura do Projeto
 
-```markdown
+```text
 cardiora/
 ├── src/
 │   ├── components/          # Componentes React
