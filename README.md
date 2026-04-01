@@ -2,7 +2,7 @@
 
 Sistema de Análise Preditiva para Riscos Cardiovasculares
 
-Desenvolvido como parte da Imersão Alura, Cardiora AI é uma aplicação web moderna que utiliza inteligência artificial (Google Gemini) para analisar dados heterogêneos de pacientes e fornecer recomendações personalizadas para prevenção cardiovascular.
+Desenvolvido como parte da Imersão Alura, Cardiora AI é uma aplicação web moderna que utiliza inteligência artificial (Groq) para analisar dados heterogêneos de pacientes e fornecer recomendações personalizadas para prevenção cardiovascular.
 
 ## Aviso de Uso Educacional
 
@@ -25,7 +25,7 @@ As saídas geradas pelo sistema não devem ser usadas como diagnóstico, prescri
 🔧 **Tecnologia Moderna**
 - Frontend React com TypeScript
 - Backend Node.js Express
-- Integração com Google Gemini AI
+- Integração com API da Groq
 - Interface responsiva e intuitiva
 
 ## Stack Tecnológico
@@ -39,17 +39,17 @@ As saídas geradas pelo sistema não devem ser usadas como diagnóstico, prescri
 ### Backend
 - **Node.js** - Runtime
 - **Express** - Web framework
-- **Google Generative AI** - IA integration
+- **Groq API (OpenAI-compatible)** - IA integration
 - **CORS** - Cross-origin support
 
 ### IA
-- **Google Gemini 2.0 Flash** - Large Language Model para análise
+- **Llama 3.1 8B Instant (Groq)** - Large Language Model para análise
 
 ## Requisitos
 
 - Node.js 18+
 - npm ou yarn
-- Google API Key (obtenha em https://aistudio.google.com/app/apikey)
+- Groq API Key (obtenha em https://console.groq.com/keys)
 
 ## Configuração
 
@@ -74,10 +74,10 @@ Crie um arquivo \`.env\` na raiz do projeto:
 cp .env.example .env
 \`\`\`
 
-Edite o arquivo \`.env\` e adicione sua Google API Key:
+Edite o arquivo \`.env\` e adicione sua chave da Groq:
 
 \`\`\`
-GOOGLE_API_KEY=sua_chave_api_aqui
+GROQ_API_KEY=sua_chave_api_aqui
 PORT=3001
 NODE_ENV=development
 \`\`\`
@@ -88,7 +88,6 @@ Crie um arquivo \`.env.development\` para o frontend:
 
 \`\`\`
 VITE_API_URL=http://localhost:3001
-VITE_GEMINI_API_KEY=sua_chave_api_aqui
 \`\`\`
 
 ## Uso
@@ -152,13 +151,17 @@ cardiora/
 │   │   ├── RiskAnalysis.tsx
 │   │   └── RecommendationPanel.tsx
 │   ├── services/            # Serviços de IA
-│   │   └── geminiService.ts
+│   │   ├── cardioApi.ts
+│   │   └── httpClient.ts
 │   ├── types/               # Tipos TypeScript
 │   │   └── index.ts
 │   ├── App.tsx              # Componente principal
 │   ├── App.css              # Estilos principais
 │   ├── index.css            # Estilos globais
 │   ├── main.tsx             # Entry point
+│   ├── services.js          # Lógica backend de IA e fallback
+│   ├── validators/          # Validação de payload com Zod
+│   │   └── patientSchema.js
 │   └── vite-env.d.ts        # Tipos Vite
 ├── public/                  # Assets públicos
 ├── server.js                # Servidor Express
