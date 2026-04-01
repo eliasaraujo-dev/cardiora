@@ -55,40 +55,40 @@ As saídas geradas pelo sistema não devem ser usadas como diagnóstico, prescri
 
 ### 1. Clonar o repositório
 
-\`\`\`bash
+```bash
 git clone https://github.com/seu-usuario/cardiora.git
 cd cardiora
-\`\`\`
+```
 
 ### 2. Instalar dependências
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### 3. Configurar variáveis de ambiente
 
 Crie um arquivo \`.env\` na raiz do projeto:
 
-\`\`\`bash
+```bash
 cp .env.example .env
-\`\`\`
+```
 
 Edite o arquivo \`.env\` e adicione sua chave da Groq:
 
-\`\`\`
+```
 GROQ_API_KEY=sua_chave_api_aqui
 PORT=3001
 NODE_ENV=development
-\`\`\`
+```
 
 ### 4. Configurar ambiente frontend
 
 Crie um arquivo \`.env.development\` para o frontend:
 
-\`\`\`
+```
 VITE_API_URL=http://localhost:3001
-\`\`\`
+```
 
 ## Uso
 
@@ -96,34 +96,34 @@ VITE_API_URL=http://localhost:3001
 
 Execute tanto o frontend quanto o backend:
 
-\`\`\`bash
+```bash
 # Terminal 1: Frontend
 npm run dev
 
 # Terminal 2: Backend
 npm run dev:server
-\`\`\`
+```
 
 Ou execute ambos simultaneamente:
 
-\`\`\`bash
+```bash
 npm run dev:all
-\`\`\`
+```
 
 O frontend estará disponível em `http://localhost:5173`
 O backend estará disponível em `http://localhost:3001`
 
 ### Build para Produção
 
-\`\`\`bash
+```bash
 npm run build
-\`\`\`
+```
 
 ### Preview da build
 
-\`\`\`bash
+```bash
 npm run preview
-\`\`\`
+```
 
 ## Uso da Aplicação
 
@@ -143,7 +143,7 @@ npm run preview
 
 ## Estrutura do Projeto
 
-\`\`\`
+```
 cardiora/
 ├── src/
 │   ├── components/          # Componentes React
@@ -171,7 +171,7 @@ cardiora/
 ├── .env.example             # Exemplo de variáveis de ambiente
 ├── .env.development         # Variáveis de desenvolvimento
 └── README.md                # Este arquivo
-\`\`\`
+```
 
 ## Tipos de Dados Processados
 
