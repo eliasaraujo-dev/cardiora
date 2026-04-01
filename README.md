@@ -61,32 +61,38 @@ cd cardiora
 ```
 
 ### 2. Instalar dependências
-
+│   ├── components/
 ```bash
 npm install
 ```
-
+│   ├── services/
 ### 3. Configurar variáveis de ambiente
 
-Crie um arquivo \`.env\` na raiz do projeto:
+│   ├── types/
 
-```bash
-cp .env.example .env
+│   ├── App.tsx
+│   ├── App.css
+│   ├── index.css
+│   ├── main.tsx
+│   ├── services.js
+│   ├── validators/
+```
+│   └── vite-env.d.ts
+├── public/
+├── server.js
+├── vite.config.ts
+├── tsconfig.json
+├── package.json
+├── .env.example
+├── .env.development
+└── README.md
 ```
 
-Edite o arquivo \`.env\` e adicione sua chave da Groq:
-
-```
-GROQ_API_KEY=sua_chave_api_aqui
-PORT=3001
-NODE_ENV=development
-```
-
-### 4. Configurar ambiente frontend
-
-Crie um arquivo \`.env.development\` para o frontend:
-
-```
+Legenda rápida:
+- `src/components/`: componentes React da interface.
+- `src/services/`: cliente HTTP e camada de API do frontend.
+- `src/services.js`: integração de IA e fallback no backend.
+- `src/validators/`: validação de payload com Zod.
 VITE_API_URL=http://localhost:3001
 ```
 
@@ -143,7 +149,7 @@ npm run preview
 
 ## Estrutura do Projeto
 
-```
+```markdown
 cardiora/
 ├── src/
 │   ├── components/          # Componentes React
