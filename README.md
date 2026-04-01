@@ -158,6 +158,11 @@ As análises fornecidas por este sistema não substituem aconselhamento médico 
 
 Contribuições são bem-vindas. Abra uma issue ou pull request.
 
+## Releases e Changelog
+
+- Versão inicial publicada: v0.1.0
+- Histórico de mudanças: veja `CHANGELOG.md`
+
 ## Licença
 
 MIT. Consulte o arquivo `LICENSE`.

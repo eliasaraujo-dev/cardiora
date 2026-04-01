@@ -5,6 +5,9 @@
 - Use os criterios de aceite para validar qualidade.
 - Priorize os blocos na ordem proposta.
 
+## Status atual de release
+- [x] Tag inicial publicada: v0.1.0 (2026-04-01).
+
 ## Semana 1 - Dados e Historico
 
 ### 1. Persistencia de analises
