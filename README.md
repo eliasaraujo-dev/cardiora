@@ -4,6 +4,12 @@ Sistema de Análise Preditiva para Riscos Cardiovasculares
 
 Desenvolvido como parte da Imersão Alura, Cardiora AI é uma aplicação web moderna que utiliza inteligência artificial (Google Gemini) para analisar dados heterogêneos de pacientes e fornecer recomendações personalizadas para prevenção cardiovascular.
 
+## Aviso de Uso Educacional
+
+Este projeto é disponibilizado para fins educacionais, demonstração técnica e pesquisa em engenharia de software.
+
+As saídas geradas pelo sistema não devem ser usadas como diagnóstico, prescrição ou decisão clínica isolada. O Cardiora AI não substitui avaliação, conduta e acompanhamento por profissional de saúde habilitado.
+
 ## Características
 
 ✨ **Análise Intelligente de Risco**
