@@ -1,8 +1,8 @@
 # Cardiora AI 🫀
 
-Sistema de Análise Preditiva para Riscos Cardiovasculares
+Sistema de análise preditiva para riscos cardiovasculares.
 
-Desenvolvido como parte da Imersão Alura, Cardiora AI é uma aplicação web moderna que utiliza inteligência artificial (Groq) para analisar dados heterogêneos de pacientes e fornecer recomendações personalizadas para prevenção cardiovascular.
+Desenvolvido como parte da Imersão Alura, o Cardiora AI utiliza IA via Groq para analisar dados heterogêneos de pacientes e gerar recomendações preventivas personalizadas.
 
 ## Aviso de Uso Educacional
 
@@ -12,44 +12,36 @@ As saídas geradas pelo sistema não devem ser usadas como diagnóstico, prescri
 
 ## Características
 
-✨ **Análise Intelligente de Risco**
-- Processamento de dados heterogêneos (genômicos, médicos, estilo de vida, ambientais)
-- Análise integrada com IA para identificação de fatores de risco
-- Recomendações personalizadas baseadas em perfil do paciente
-
-📊 **Relatórios Estruturados**
-- Análise detalhada de risco cardiovascular
-- Recomendações preventivas acionáveis
-- Download e impressão de relatórios
-
-🔧 **Tecnologia Moderna**
-- Frontend React com TypeScript
-- Backend Node.js Express
-- Integração com API da Groq
-- Interface responsiva e intuitiva
+- Análise de risco cardiovascular com dados genômicos, médicos, estilo de vida e ambientais.
+- Recomendações preventivas personalizadas.
+- Relatório com opção de impressão e download.
+- Fallback local quando a API externa está indisponível.
+- Frontend responsivo com React + TypeScript.
 
 ## Stack Tecnológico
 
 ### Frontend
-- **React 18** - UI library
-- **TypeScript** - Type-safe JavaScript
-- **Vite** - Next-generation build tool
-- **CSS3** - Modern styling
+- React 18
+- TypeScript
+- Vite
+- CSS3
 
 ### Backend
-- **Node.js** - Runtime
-- **Express** - Web framework
-- **Groq API (OpenAI-compatible)** - IA integration
-- **CORS** - Cross-origin support
+- Node.js
+- Express
+- Zod (validação)
+- Helmet + Rate Limit (hardening)
+- Pino (logs estruturados)
 
 ### IA
-- **Llama 3.1 8B Instant (Groq)** - Large Language Model para análise
+- Groq API (OpenAI-compatible)
+- Modelo padrão: Llama 3.1 8B Instant
 
 ## Requisitos
 
 - Node.js 18+
-- npm ou yarn
-- Groq API Key (obtenha em https://console.groq.com/keys)
+- npm
+- Chave da Groq: https://console.groq.com/keys
 
 ## Configuração
 
@@ -61,180 +53,111 @@ cd cardiora
 ```
 
 ### 2. Instalar dependências
-│   ├── components/
+
 ```bash
 npm install
 ```
-│   ├── services/
+
 ### 3. Configurar variáveis de ambiente
 
-│   ├── types/
+Crie o arquivo `.env` com base no `.env.example`:
 
-│   ├── App.tsx
-│   ├── App.css
-│   ├── index.css
-│   ├── main.tsx
-│   ├── services.js
-│   ├── validators/
-```
-│   └── vite-env.d.ts
-├── public/
-├── server.js
-├── vite.config.ts
-├── tsconfig.json
-├── package.json
-├── .env.example
-├── .env.development
-└── README.md
+```bash
+cp .env.example .env
 ```
 
-Legenda rápida:
-- `src/components/`: componentes React da interface.
-- `src/services/`: cliente HTTP e camada de API do frontend.
-- `src/services.js`: integração de IA e fallback no backend.
-- `src/validators/`: validação de payload com Zod.
+Exemplo mínimo para backend:
+
+```env
+GROQ_API_KEY=sua_chave_api_aqui
+PORT=3001
+NODE_ENV=development
+CORS_ORIGINS=http://localhost:5173
+```
+
+### 4. Configurar frontend
+
+No `.env.development`:
+
+```env
 VITE_API_URL=http://localhost:3001
 ```
 
 ## Uso
 
-### Modo Desenvolvimento
-
-Execute tanto o frontend quanto o backend:
+### Desenvolvimento
 
 ```bash
-# Terminal 1: Frontend
+# Terminal 1
 npm run dev
 
-# Terminal 2: Backend
+# Terminal 2
 npm run dev:server
 ```
 
-Ou execute ambos simultaneamente:
+Ou ambos juntos:
 
 ```bash
 npm run dev:all
 ```
 
-O frontend estará disponível em `http://localhost:5173`
-O backend estará disponível em `http://localhost:3001`
+- Frontend: `http://localhost:5173`
+- Backend: `http://localhost:3001`
 
-### Build para Produção
+### Build de produção
 
 ```bash
 npm run build
 ```
 
-### Preview da build
+### Preview
 
 ```bash
 npm run preview
 ```
-
-## Uso da Aplicação
-
-1. **Preencher Dados do Paciente**
-   - Informe dados pessoais, histórico médico, estilo de vida e dados ambientais
-   - Campos com * são obrigatórios
-
-2. **Análise de Risco**
-   - Clique em "Analisar Risco Cardiovascular"
-   - A IA analisará os dados e identificará fatores de risco
-   - Visualize os resultados da análise
-
-3. **Recomendações Personalizadas**
-   - Clique em "Obter Recomendações Personalizadas"
-   - Receba sugestões de prevenção baseadas no perfil
-   - Baixe ou imprima o relatório completo
 
 ## Estrutura do Projeto
 
 ```text
 cardiora/
 ├── src/
-│   ├── components/          # Componentes React
+│   ├── components/
 │   │   ├── PatientForm.tsx
 │   │   ├── RiskAnalysis.tsx
-│   │   └── RecommendationPanel.tsx
-│   ├── services/            # Serviços de IA
+│   │   ├── RecommendationPanel.tsx
+│   │   └── TextLines.tsx
+│   ├── services/
 │   │   ├── cardioApi.ts
 │   │   └── httpClient.ts
-│   ├── types/               # Tipos TypeScript
-│   │   └── index.ts
-│   ├── App.tsx              # Componente principal
-│   ├── App.css              # Estilos principais
-│   ├── index.css            # Estilos globais
-│   ├── main.tsx             # Entry point
-│   ├── services.js          # Lógica backend de IA e fallback
-│   ├── validators/          # Validação de payload com Zod
+│   ├── validators/
 │   │   └── patientSchema.js
-│   └── vite-env.d.ts        # Tipos Vite
-├── public/                  # Assets públicos
-├── server.js                # Servidor Express
-├── vite.config.ts           # Configuração Vite
-├── tsconfig.json            # Configuração TypeScript
-├── package.json             # Dependências npm
-├── .env.example             # Exemplo de variáveis de ambiente
-├── .env.development         # Variáveis de desenvolvimento
-└── README.md                # Este arquivo
+│   ├── types/
+│   │   └── index.ts
+│   ├── App.tsx
+│   ├── App.css
+│   ├── index.css
+│   ├── main.tsx
+│   ├── services.js
+│   └── vite-env.d.ts
+├── .github/
+├── server.js
+├── vite.config.ts
+├── tsconfig.json
+├── package.json
+├── .env.example
+├── .env.development
+├── LICENSE
+└── README.md
 ```
-
-## Tipos de Dados Processados
-
-### Dados Pessoais
-- Idade
-- Sexo biológico
-
-### Dados Genômicos
-- Variantes genéticas de colesterol
-- Polimorfismo APOE
-
-### Histórico Médico
-- Diagnóstico de hipertensão
-- Diagnóstico de diabetes
-- Histórico familiar de DCV
-- Níveis de colesterol (LDL, HDL, triglicerídeos)
-- Medicações em uso
-
-### Estilo de Vida
-- Tipo de alimentação
-- Atividade física semanal
-- Status de tabagismo
-- Consumo de álcool
-- Nível de estresse
-- Horas de sono
-
-### Dados Ambientais
-- Cidade de residência
-- Bairro
-- Qualidade do ar
-- Exposição a poluição sonora
 
 ## Aviso Importante ⚠️
 
-As análises fornecidas por este sistema **não substituem o aconselhamento médico profissional**. Sempre consulte um médico qualificado ou cardiologista para:
-
-- Diagnóstico definitivo
-- Recomendações personalizadas baseadas no histórico completo
-- Plano de tratamento individualizado
-- Acompanhamento contínuo
+As análises fornecidas por este sistema não substituem aconselhamento médico profissional. Sempre consulte um médico qualificado para diagnóstico, conduta e acompanhamento.
 
 ## Contribuindo
 
-Contribuições são bem-vindas! Por favor, abra uma issue ou PR com suas sugestões.
+Contribuições são bem-vindas. Abra uma issue ou pull request.
 
 ## Licença
 
-Este projeto está sob licença MIT.
-
-## Autores
-
-Desenvolvido durante a Imersão Alura
-
-## Suporte
-
-Para problemas ou dúvidas, abra uma issue no repositório.
-
----
-
-**Desenvolvido com ❤️ para a saúde cardiovascular**
+MIT. Consulte o arquivo `LICENSE`.
