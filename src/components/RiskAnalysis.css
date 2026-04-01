@@ -1,0 +1,108 @@
+.risk-analysis {
+  background: linear-gradient(155deg, rgba(11, 21, 37, 0.98) 0%, rgba(14, 31, 57, 0.95) 100%);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 18px 48px rgba(5, 12, 28, 0.45);
+  max-width: 860px;
+  margin: 0 auto;
+  animation: slideIn 0.25s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.risk-analysis h2 {
+  color: var(--text-primary);
+  margin-top: 0;
+  border-bottom: 2px solid rgba(255, 95, 95, 0.9);
+  padding-bottom: 1rem;
+}
+
+.analysis-content {
+  margin: 2rem 0;
+  min-height: 200px;
+}
+
+.analysis-text {
+  background: rgba(9, 19, 35, 0.75);
+  border: 1px solid rgba(165, 198, 255, 0.2);
+  border-left: 4px solid var(--accent-cyan);
+  padding: 1.5rem;
+  border-radius: 10px;
+  line-height: 1.72;
+}
+
+.analysis-paragraph {
+  color: var(--text-secondary);
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.analysis-paragraph + .analysis-paragraph {
+  margin-top: 1rem;
+}
+
+.analysis-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.85rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  flex: 1;
+  min-width: 200px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #1dd8ff 0%, #00a2cd 100%);
+  color: #062a40;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0, 182, 228, 0.38);
+  filter: brightness(1.03);
+}
+
+.btn-secondary {
+  background: rgba(24, 44, 76, 0.9);
+  color: var(--text-primary);
+  border: 1px solid rgba(165, 198, 255, 0.22);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(36, 64, 104, 0.92);
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .risk-analysis {
+    padding: 1.5rem;
+  }
+
+  .btn {
+    min-width: 150px;
+  }
+}

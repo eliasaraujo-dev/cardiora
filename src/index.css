@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap');
+
+:root {
+  --bg-deep: #081326;
+  --bg-mid: #112b57;
+  --bg-soft: #1f3f75;
+  --surface: #0d1a2f;
+  --surface-2: #122645;
+  --surface-3: #10223d;
+  --text-primary: #e8f0ff;
+  --text-secondary: #b6c8eb;
+  --accent-cyan: #16d7ff;
+  --accent-lime: #4fd183;
+  --accent-warn: #ffcc41;
+  --accent-danger: #ff5f5f;
+  --border-soft: rgba(165, 198, 255, 0.18);
+  --ring: 0 0 0 3px rgba(22, 215, 255, 0.2);
+
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1100px 480px at 8% -12%, rgba(22, 215, 255, 0.25), transparent 60%),
+    radial-gradient(1000px 440px at 110% 0%, rgba(79, 209, 131, 0.22), transparent 60%),
+    linear-gradient(170deg, var(--bg-deep) 0%, var(--bg-mid) 55%, var(--bg-soft) 100%);
+  color: var(--text-primary);
+}
+
+button {
+  font-family: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+}

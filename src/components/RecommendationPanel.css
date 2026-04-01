@@ -1,0 +1,162 @@
+.recommendation-panel {
+  background: linear-gradient(155deg, rgba(11, 21, 37, 0.98) 0%, rgba(14, 31, 57, 0.95) 100%);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 18px 48px rgba(5, 12, 28, 0.45);
+  max-width: 860px;
+  margin: 0 auto;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recommendation-panel h2 {
+  color: var(--text-primary);
+  margin-top: 0;
+  border-bottom: 2px solid rgba(79, 209, 131, 0.85);
+  padding-bottom: 1rem;
+}
+
+.recommendation-content {
+  margin: 2rem 0;
+  min-height: 300px;
+}
+
+.recommendation-text {
+  background: rgba(7, 45, 34, 0.42);
+  border: 1px solid rgba(79, 209, 131, 0.34);
+  border-left: 4px solid var(--accent-lime);
+  padding: 1.5rem;
+  border-radius: 10px;
+  line-height: 1.72;
+}
+
+.recommendation-paragraph {
+  color: var(--text-secondary);
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.recommendation-paragraph + .recommendation-paragraph {
+  margin-top: 1rem;
+}
+
+.recommendation-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.82rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  flex: 1;
+  min-width: 150px;
+}
+
+.btn-print {
+  background: linear-gradient(135deg, #40a8ff 0%, #1a80db 100%);
+  color: #eaf5ff;
+}
+
+.btn-print:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 20px rgba(33, 150, 243, 0.34);
+  filter: brightness(1.03);
+}
+
+.btn-download {
+  background: linear-gradient(135deg, #53cd78 0%, #3ba15a 100%);
+  color: #07301a;
+}
+
+.btn-download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 20px rgba(76, 175, 80, 0.34);
+  filter: brightness(1.03);
+}
+
+.btn-new {
+  background: linear-gradient(135deg, #ffb024 0%, #f38a00 100%);
+  color: #3f2300;
+}
+
+.btn-new:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 20px rgba(255, 152, 0, 0.34);
+  filter: brightness(1.03);
+}
+
+.medical-disclaimer {
+  background: rgba(83, 59, 0, 0.34);
+  border: 1px solid rgba(255, 204, 65, 0.65);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.medical-disclaimer h3 {
+  color: #ffe07e;
+  margin-top: 0;
+}
+
+.medical-disclaimer p {
+  color: #ffe8a9;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.medical-disclaimer ul {
+  color: #ffe8a9;
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.medical-disclaimer li {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .recommendation-panel {
+    padding: 1.5rem;
+  }
+
+  .btn {
+    min-width: 120px;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .medical-disclaimer {
+    padding: 1rem;
+  }
+}
+
+@media print {
+  .recommendation-actions,
+  .medical-disclaimer {
+    display: none;
+  }
+
+  .recommendation-panel {
+    box-shadow: none;
+    padding: 0;
+  }
+}
